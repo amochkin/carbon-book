@@ -1,80 +1,96 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-  <head>
+<head>
     <title>{{ .Title }}</title>
-  <meta charset="UTF-8" />
-  <meta name="theme-color" content='{{ .Site.Params.header | default "#354F52" }}'>
-  {{ if .Site.Params.instanaKey }}
-  <script>
-  (function(s,t,a,n){s[t]||(s[t]=a,n=s[a]=function(){n.q.push(arguments)},
-  n.q=[],n.v=2,n.l=1*new Date)})(window,"InstanaEumObject","ineum");
+    <meta charset="UTF-8"/>
+    <meta name="theme-color" content='{{ .Site.Params.header | default "#354F52" }}'>
+    <meta name="apple-mobile-web-app-title" content="{{ .Title }}" />
+    {{ if .Site.Params.instanaKey }}
+    <script>
+        (function (s, t, a, n) {
+            s[t] || (s[t] = a, n = s[a] = function () {
+                n.q.push(arguments)
+            },
+                n.q = [], n.v = 2, n.l = 1 * new Date)
+        })(window, "InstanaEumObject", "ineum");
 
-  ineum('reportingUrl', 'https://eum-coral-saas.instana.io');
-  ineum('key', '{{ .Site.Params.instanaKey }}');
-  ineum('trackSessions');
-  </script>
-  <script defer crossorigin="anonymous" src="https://eum.instana.io/eum.min.js"></script>
-  {{ end }}
-  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css" />
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/ui-shell.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/content-switcher.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/skip-to-content.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/tag.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.27.2/search.min.js"></script>
-  {{ if .Site.Params.favicon }}
-  <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
-  {{ end }}
-  {{ if .Site.Params.siteicon }}
-      <meta name="twitter:image" property="og:image" content="{{ .Site.Params.siteicon | absURL }}" />
-      <link rel="apple-touch-icon" href="{{ .Site.Params.siteicon | absURL }}" />
-  {{ end }}
-  {{ partial "css" . }} {{ partial "js" . }} {{ hugo.Generator }}
+        ineum('reportingUrl', 'https://eum-coral-saas.instana.io');
+        ineum('key', '{{ .Site.Params.instanaKey }}');
+        ineum('trackSessions');
+    </script>
+    <script defer crossorigin="anonymous" src="https://eum.instana.io/eum.min.js"></script>
+    {{ end }}
+    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css"/>
+    <script type="module"
+            src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/ui-shell.min.js"></script>
+    <script type="module"
+            src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/content-switcher.min.js"></script>
+    <script type="module"
+            src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/skip-to-content.min.js"></script>
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/tag.min.js"></script>
+    <script type="module"
+            src="https://1.www.s81c.com/common/carbon/web-components/version/v2.27.2/search.min.js"></script>
+    {{ if .Site.Params.favicon }}
+    <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}" />
+    {{ end }}
+    {{ if .Site.Params.faviconSvg }}
+    <link rel="icon" type="image/svg+xml" href="{{ .Site.Params.faviconSvg | absURL }}" />
+    {{ end }}
+    {{ if .Site.Params.siteicon }}
+    <meta name="twitter:image" property="og:image" content="{{ .Site.Params.siteicon | absURL }}"/>
+    <link rel="apple-touch-icon" href="{{ .Site.Params.siteicon | absURL }}"/>
+    {{ end }}
+    {{ partial "css" . }} {{ partial "js" . }} {{ hugo.Generator }}
 
-  {{ template "_internal/opengraph.html" . }}
-  
-  <style>
-@media (min-width: 66rem) {
-.cds-hugo-carbon--container .cds--grid {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}    
-}
-    h3 {
-      margin-bottom: 1rem;
-    }
-  </style>
+    {{ template "_internal/opengraph.html" . }}
+
+    <style>
+        @media (min-width: 66rem) {
+            .cds-hugo-carbon--container .cds--grid {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body class='cds-theme-zone-{{ if isset .Site.Params "cdstheme" }}{{.Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}'>
-    {{ partial "body-open" . }}
-<cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>    
+{{ partial "body-open" . }}
+<cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>
 <div class="cds-theme-zone-g90">
-<cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
-  <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu" collapse-mode="responsive" usage-mode="" active=""></cds-header-menu-button>
-  <cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
-  <cds-header-nav menu-bar-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="navigation">
-    {{ if .Site.Menus.header }}
-      {{ range sort .Site.Menus.header }}
-        {{ if .HasChildren }}
-        <cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
-          {{ range .Children }}
-            <cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
-          {{ end }}
-          </cds-header-menu>
-        {{ else }}
-          <cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
+    <cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
+        <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"
+                                collapse-mode="responsive" usage-mode="" active=""></cds-header-menu-button>
+        <cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
+        <cds-header-nav menu-bar-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="navigation">
+            {{ if .Site.Menus.header }}
+            {{ range sort .Site.Menus.header }}
+            {{ if .HasChildren }}
+            <cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
+                {{ range .Children }}
+                <cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
+                {{ end }}
+            </cds-header-menu>
+            {{ else }}
+            <cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </cds-header-nav>
+        {{ if .Site.Params.search }}
+        <div id="search">
+        </div>
         {{ end }}
-      {{ end }}
-    {{ end }}
-  </cds-header-nav>
-  {{ if .Site.Params.search }}
-  <div id="search">
-  </div>
-  {{ end }}
-</cds-header>
+    </cds-header>
 </div>
-<div id="main-content" name="main-content" data-floating-menu-container="" class="cds--body cds-hugo-carbon--container" role="none">
-<main class="cds--content cds-hugo-carbon--ui-shell-content">
-  <div class="cds--grid">
-    <div class="cds--row">
-      <div class="cds--col-lg-12">
+<div id="main-content" name="main-content" data-floating-menu-container="" class="cds--body cds-hugo-carbon--container"
+     role="none">
+    <main class="cds--content cds-hugo-carbon--ui-shell-content">
+        <div class="cds--grid">
+            <div class="cds--row">
+                <div class="cds--col-lg-12">
 
