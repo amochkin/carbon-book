@@ -51,11 +51,10 @@ a.u-url {
 /* Intro page */
 div.intro {
     width: 100vw;
-    margin-left: -4rem;
-    padding: 3rem 5rem;
+    padding: 2rem 2rem;
 }
-div.intro img.profile,svg {
-  max-width: 10rem;
+div.intro profile-pic {
+  max-width: 2rem;
   float: left;
   margin-right: 2rem;
 }
