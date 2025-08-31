@@ -28,21 +28,17 @@ params:
 # Optional: Basic menu example to get started
 menu:
   header:
-    - name: Docs
+    - identifier: docs
+      name: Docs
       url: "/docs/"
       weight: 1
-      children:
-        - name: Introduction
-          url: "/docs/intro/"
-          weight: 1
-        - name: Install
-          url: "/docs/install/"
-          weight: 2
-    - name: Guides
-      url: "/guides/"
+
+    - parent: docs
+      name: Introduction
+      url: "/docs/intro/"
+      weight: 1
+
+    - parent: docs
+      name: Install
+      url: "/docs/install/"
       weight: 2
-      children:
-        - name: Quickstart
-          url: "/guides/quickstart/"
-        - name: Configuration
-          url: "/guides/configuration/"
