@@ -5,6 +5,13 @@ title: Hugo Theme
 
 theme: carbon-book
 
+module:
+  mounts:
+    - source: node_modules/@carbon/web-components/dist
+      target: static/vendor/carbon
+    - source: node_modules/@carbon/styles/css
+      target: static/vendor/carbon-styles
+
 # Sample params used by the theme's homepage (layouts/index.html)
 params:
   search: 'true'

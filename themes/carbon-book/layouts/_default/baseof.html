@@ -16,12 +16,12 @@
     </script>
     <script defer crossorigin="anonymous" src="https://eum.instana.io/eum.min.js"></script>
     {{ end }}
-    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css" />
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/ui-shell.min.js"></script>
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/content-switcher.min.js"></script>
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/skip-to-content.min.js"></script>
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/tag.min.js"></script>
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.27.2/search.min.js"></script>
+    <link rel='stylesheet' href='{{ "/vendor/carbon-styles/styles.min.css" | relURL }}' />
+    <script type='module' src='{{ "/vendor/carbon/ui-shell.min.js" | relURL }}'></script>
+    <script type='module' src='{{ "/vendor/carbon/content-switcher.min.js" | relURL }}'></script>
+    <script type='module' src='{{ "/vendor/carbon/skip-to-content.min.js" | relURL }}'></script>
+    <script type='module' src='{{ "/vendor/carbon/tag.min.js" | relURL }}'></script>
+    <script type='module' src='{{ "/vendor/carbon/search.min.js" | relURL }}'></script>
     {{ if .Site.Params.favicon }}
     <link rel="icon" href="{{ .Site.Params.favicon | absURL }}" />
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}" />
@@ -44,10 +44,10 @@
       h3 { margin-bottom: 1rem; }
     </style>
   </head>
-  <body class='cds-theme-zone-{{ if isset .Site.Params "cdstheme" }}{{ .Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}'>
+  <body class='cds--{{ if isset .Site.Params "cdstheme" }}{{ .Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}'>
     {{ partial "body-open" . }}
     <cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>
-    <div class="cds-theme-zone-g90">
+    <div class="cds--g90">
       {{ partial "header" . }}
     </div>
     <div id="main-content" name="main-content" data-floating-menu-container="" class="cds--body cds-hugo-carbon--container" role="none">
@@ -64,15 +64,15 @@
       </main>
       {{ partial "side-nav.html" . }}
     </div>
-    <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+    <script src='{{ "pagefind/pagefind-ui.js" | relURL }}'></script>
     {{ if isset .Site.Params "darktheme" }}
     <script type="text/javascript">
       function setTheme(themeName) { document.body.className = themeName; }
       function selectTheme() {
         const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-        if (prefersDarkTheme.matches) { setTheme('cds-theme-zone-{{ .Site.Params.darktheme }}'); }
+        if (prefersDarkTheme.matches) { setTheme('cds--{{ .Site.Params.darktheme }}'); }
         const prefersLightTheme = window.matchMedia('(prefers-color-scheme: light)');
-        if (prefersLightTheme.matches) { setTheme('cds-theme-zone-{{ .Site.Params.lighttheme }}'); }
+        if (prefersLightTheme.matches) { setTheme('cds--{{ .Site.Params.lighttheme }}'); }
       }
       selectTheme();
       window.matchMedia('(prefers-color-scheme: dark)').onchange = selectTheme;
