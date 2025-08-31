@@ -14,3 +14,12 @@ Inspired by [Hugo Book Theme](https://github.com/alex-shpak/hugo-book)
 - [ ] Accordions
 - [ ] Hints/Quotes
 - [ ] Tabs component
+
+## Installation
+
+```
+[module]
+[[module.imports]]
+path = "github.com/<you>/carbon-book"
+version = "v0.1.0" # optional pin
+```

@@ -1,0 +1,19 @@
+[module]
+[[module.mounts]]
+source = "themes/carbon-book/archetypes"
+target = "archetypes"
+[[module.mounts]]
+source = "themes/carbon-book/assets"
+target = "assets"
+[[module.mounts]]
+source = "themes/carbon-book/layouts"
+target = "layouts"
+[[module.mounts]]
+source = "themes/carbon-book/static"
+target = "static"
+[[module.mounts]]
+source = "themes/carbon-book/data"
+target = "data"
+[[module.mounts]]
+source = "themes/carbon-book/i18n"
+target = "i18n"
