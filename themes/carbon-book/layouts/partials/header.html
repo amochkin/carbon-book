@@ -3,7 +3,7 @@
   <head>
     <title>{{ .Title }}</title>
   <meta charset="UTF-8" />
-  <meta name="theme-color" content="{{ .Site.Params.header | default "#354F52" }}">
+  <meta name="theme-color" content='{{ .Site.Params.header | default "#354F52" }}'>
   {{ if .Site.Params.instanaKey }}
   <script>
   (function(s,t,a,n){s[t]||(s[t]=a,n=s[a]=function(){n.q.push(arguments)},
@@ -44,9 +44,10 @@
     }
   </style>
 </head>
-<body class="cds-theme-zone-{{ if isset .Site.Params "cdstheme" }}{{.Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}">
+<body class='cds-theme-zone-{{ if isset .Site.Params "cdstheme" }}{{.Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}'>
     {{ partial "body-open" . }}
 <cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>    
+<div class="cds-theme-zone-g90">
 <cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
   <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu" collapse-mode="responsive" usage-mode="" active=""></cds-header-menu-button>
   <cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
@@ -70,6 +71,7 @@
   </div>
   {{ end }}
 </cds-header>
+</div>
 <div id="main-content" name="main-content" data-floating-menu-container="" class="cds--body cds-hugo-carbon--container" role="none">
 <main class="cds--content cds-hugo-carbon--ui-shell-content">
   <div class="cds--grid">
