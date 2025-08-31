@@ -1,38 +1,4 @@
-</div>
-</div>
-</div>
-</main>
-{{ partial "side-nav.html" . }}
-<script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
-{{ if isset .Site.Params "darktheme" }}
-<script type="text/javascript">
-    function setTheme(themeName) {
-        document.body.className = themeName;
-    }
-    
-    function selectTheme() {
-        const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-        if (prefersDarkTheme.matches) {
-            setTheme('cds-theme-zone-{{.Site.Params.darktheme }}');
-        } 
-        
-        const prefersLightTheme = window.matchMedia('(prefers-color-scheme: light)');
-        if (prefersLightTheme.matches) {
-            setTheme('cds-theme-zone-{{.Site.Params.lighttheme }}');
-        }
-    }
-    selectTheme()
-    window.matchMedia('(prefers-color-scheme: dark)').onchange = selectTheme
-    
-    
-</script>
-{{ end }}
-{{ if .Site.Params.search }}
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: "#search", showSubResults: true, resetStyles: false, showImages: false });
-    });
-</script>
-{{ end }}
-</body>
-</html>
+{{/* Partial: footer.html
+     Intentionally left empty. All closing tags and shared scripts/styles were moved into _default/baseof.html.
+     Kept for backward compatibility so sites can still override/extend if needed.
+*/}}
