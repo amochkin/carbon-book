@@ -47,22 +47,22 @@
 <body class="cds-theme-zone-{{ if isset .Site.Params "cdstheme" }}{{.Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}">
     {{ partial "body-open" . }}
 <cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>    
-<cds-header aria-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="banner">
+<cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
   <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu" collapse-mode="responsive" usage-mode="" active=""></cds-header-menu-button>
   <cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
   <cds-header-nav menu-bar-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="navigation">
     {{ if .Site.Menus.header }}
-        {{ range sort .Site.Menus.header }}
-          {{ if .HasChildren }}
-          <cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
-            {{ range .Children }}
-              <cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
-              {{ end }}
-            </cds-header-menu>
-          {{ else }}
-            <cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
+      {{ range sort .Site.Menus.header }}
+        {{ if .HasChildren }}
+        <cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
+          {{ range .Children }}
+            <cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
           {{ end }}
+          </cds-header-menu>
+        {{ else }}
+          <cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
         {{ end }}
+      {{ end }}
     {{ end }}
   </cds-header-nav>
   {{ if .Site.Params.search }}
