@@ -1,0 +1,7 @@
+{{/* Base layout to reduce duplication and centralize the chrome (head, header, footer). */}}
+{{ partial "header" . }}
+  {{ block "main" . }}
+    {{/* Default fallback content if a template does not override the block. The header partial already opens the content containers. */}}
+    {{ .Content }}
+  {{ end }}
+{{ partial "footer" . }}

@@ -1,4 +1,4 @@
-{{ partial "header" . }}
+{{ define "main" }}
 <section>
 	<h2>{{ .Title }}</h2>
 	{{ $articles := where .Site.RegularPages "Section" .Type }} {{ $paginator := .Paginate $articles }}
@@ -7,5 +7,4 @@
 	</ul>
 	{{ partial "paginator" . }}
 </section>
-
-{{ partial "footer" . }}
+{{ end }}

@@ -1,4 +1,4 @@
-{{ partial "header" . }}
+{{ define "main" }}
 <section class="list">
 	<h2>{{ .Title }}</h2>
 	<ul>
@@ -6,4 +6,4 @@
 	</ul>
 	{{ partial "paginator" . }}
 </section>
-{{ partial "footer" . }}
+{{ end }}
