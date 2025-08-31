@@ -7,6 +7,15 @@ theme: carbon-book
 
 # Sample params used by the theme's homepage (layouts/index.html)
 params:
+  search: "true"
+  sidenav: "true"
+  sidemenu: "auto"
+  headerTheme: "g90"
+  # Force to "white" for light theme, "g100" for dark theme, or "g90" for darker theme.
+  #  cdstheme: "white"
+  darktheme: "g90"   # or "g90"
+  lighttheme: "white"
+  org: "Your org"
   # Path to a profile image. Place an image in static/images/profile.jpg or adjust the path.
   profilePic: "/images/profile.svg"
   # Short subtitle displayed under the site title on the home page.
@@ -18,13 +27,22 @@ params:
 
 # Optional: Basic menu example to get started
 menu:
-  main:
-    - name: Home
-      url: "/"
+  header:
+    - name: Docs
+      url: "/docs/"
       weight: 1
-    - name: About
-      url: "/about/"
+      children:
+        - name: Introduction
+          url: "/docs/intro/"
+          weight: 1
+        - name: Install
+          url: "/docs/install/"
+          weight: 2
+    - name: Guides
+      url: "/guides/"
       weight: 2
-    - name: Posts
-      url: "/posts/"
-      weight: 3
+      children:
+        - name: Quickstart
+          url: "/guides/quickstart/"
+        - name: Configuration
+          url: "/guides/configuration/"
