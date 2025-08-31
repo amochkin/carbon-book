@@ -1,3 +1,2 @@
-module github.com/IBM/carbon-hugo-theme
-
+module github.com/amochkin/carbon-book
 go 1.19
