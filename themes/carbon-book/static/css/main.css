@@ -50,14 +50,11 @@ a.u-url {
 }
 /* Intro page */
 div.intro {
-    padding-top: 3rem;
-    /*background: black;
-    color: white;*/
     width: 100vw;
     margin-left: -4rem;
     padding: 3rem 5rem;
 }
-div.intro img.profile {
+div.intro img.profile,svg {
   max-width: 10rem;
   float: left;
   margin-right: 2rem;

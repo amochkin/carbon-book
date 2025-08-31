@@ -1,5 +1,30 @@
+# Hugo site configuration with sample content for the Carbon Book theme
 baseURL: /
 languageCode: en-us
 title: Carbon Hugo Theme
 
 theme: carbon-book
+
+# Sample params used by the theme's homepage (layouts/index.html)
+params:
+  # Path to a profile image. Place an image in static/images/profile.jpg or adjust the path.
+  profilePic: "/images/profile.svg"
+  # Short subtitle displayed under the site title on the home page.
+  subtitle: "A minimal, clean Hugo theme for notes and posts"
+  # Supports Markdown. Keep it brief; it's rendered as a paragraph on the home page.
+  description: >-
+    Welcome to my Carbon Book. This is sample content configured via hugo.yaml.
+    You can edit these values in the params section to customize your site.
+
+# Optional: Basic menu example to get started
+menu:
+  main:
+    - name: Home
+      url: "/"
+      weight: 1
+    - name: About
+      url: "/about/"
+      weight: 2
+    - name: Posts
+      url: "/posts/"
+      weight: 3
