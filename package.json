@@ -1,0 +1,20 @@
+{
+  "name": "carbon-book",
+  "version": "1.0.0",
+  "description": "Hugo theme based on [IBM Carbon Design System](https://carbondesignsystem.com/)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm:reset": "rm -rf ./**/node_modules && rm -rf ./**/package-lock.json && npm install",
+    "npm:audit": "npm audit --audit-level=moderate",
+    "postinstall": "lefthook install"
+  },
+  "author": "A. Mochkin <https://github.com/amochkin>",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@p8ec/shared": "^2.4.2",
+    "commitlint": "^19.8.1",
+    "lefthook": "^1.12.3"
+  }
+}
