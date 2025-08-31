@@ -1,29 +1,24 @@
-{{/* Partial: header.html Renders only the Carbon Web Components
-<cds-header>
-	block (self-contained and balanced). All document-level structure and containers live in layouts/_default/baseof.html
-	to avoid unclosed tags in partials. */}}
-	<cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
-		<cds-header-menu-button
-			button-label-active="Close menu"
-			button-label-inactive="Open menu"
-			collapse-mode="responsive"
-			usage-mode=""
-			active=""
-		></cds-header-menu-button>
-		<cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
-		<cds-header-nav menu-bar-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="navigation">
-			{{ if .Site.Menus.header }} {{ range sort .Site.Menus.header }} {{ if .HasChildren }}
-			<cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
-				{{ range .Children }}
-				<cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
-				{{ end }}
-			</cds-header-menu>
-			{{ else }}
-			<cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
-			{{ end }} {{ end }} {{ end }}
-		</cds-header-nav>
-		{{ if .Site.Params.search }}
-		<div id="search"></div>
-		{{ end }}
-	</cds-header></cds-header
->
+<cds-header aria-label="{{ .Site.Params.Org }} {{ .Site.Title }}" role="banner">
+	<cds-header-menu-button
+		button-label-active="Close menu"
+		button-label-inactive="Open menu"
+		collapse-mode="responsive"
+		usage-mode=""
+		active=""
+	></cds-header-menu-button>
+	<cds-header-name href="{{ .Site.BaseURL }}" prefix="{{ .Site.Params.org }}"> {{ .Site.Title }}</cds-header-name>
+	<cds-header-nav menu-bar-label="{{ .Site.Params.org }} {{ .Site.Title }}" role="navigation">
+		{{ if .Site.Menus.header }} {{ range sort .Site.Menus.header }} {{ if .HasChildren }}
+		<cds-header-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
+			{{ range .Children }}
+			<cds-header-menu-item href="{{ .URL }}" tabindex="-1" role="listitem">{{ .Name }}</cds-header-menu-item>
+			{{ end }}
+		</cds-header-menu>
+		{{ else }}
+		<cds-header-nav-item active="" href="{{ .URL }}">{{ .Name }}</cds-header-nav-item>
+		{{ end }} {{ end }} {{ end }}
+	</cds-header-nav>
+	{{ if .Site.Params.search }}
+	<div id="search"></div>
+	{{ end }}
+</cds-header>
