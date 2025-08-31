@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Hugo theme based on [IBM Carbon Design System](https://carbondesignsystem.com/)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "hugo server -b http://localhost:1313",
+    "dev:no-fast-render": "hugo server -b http://localhost:1313 --disableFastRender",
+    "clean": "rm -rf public resources/_gen resources/_gen-assets",
+    "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
     "npm:reset": "rm -rf ./**/node_modules && rm -rf ./**/package-lock.json && npm install",
     "npm:audit": "npm audit --audit-level=moderate",
     "postinstall": "lefthook install"
