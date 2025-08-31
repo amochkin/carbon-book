@@ -1,5 +1,5 @@
 ---
-title: "Install"
+title: 'Install'
 date: 2025-08-31T10:25:00Z
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Carbon Book"
-description: "A sample home page for the Carbon Hugo Theme demo."
+title: 'Welcome to Carbon Book'
+description: 'A sample home page for the Carbon Hugo Theme demo.'
 ---
 
 This is a sample homepage. You can edit this content in `content/_index.md`.

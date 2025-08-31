@@ -1,6 +1,6 @@
 # Carbon-based documentation theme for Hugo
 
-Based on [Carbon Hugo Theme](https://github.com/IBM/carbon-hugo-theme/) 
+Based on [Carbon Hugo Theme](https://github.com/IBM/carbon-hugo-theme/)
 
 Inspired by [Hugo Book Theme](https://github.com/alex-shpak/hugo-book)
 
@@ -14,4 +14,3 @@ Inspired by [Hugo Book Theme](https://github.com/alex-shpak/hugo-book)
 - [ ] Accordions
 - [ ] Hints/Quotes
 - [ ] Tabs component
-

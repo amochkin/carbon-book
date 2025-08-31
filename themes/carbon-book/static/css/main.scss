@@ -1,112 +1,126 @@
 body {
-  transition: opacity 0s;
+	transition: opacity 0s;
 }
 
 .cds--content.cds-hugo-carbon--ui-shell-content {
-  background-color: var(--cds-background);
-  color: var(--cds-text-primary);
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
-  overflow-y: scroll;
+	background-color: var(--cds-background);
+	color: var(--cds-text-primary);
+	margin: 0;
+	min-height: 100vh;
+	width: 100%;
+	overflow-y: scroll;
 }
 
 li p {
-  margin: 0.5rem 0;
+	margin: 0.5rem 0;
 }
 
-h1,h2,h3,h4,h5,h6,p,table {
-  margin: 2rem 1rem 2rem 1rem;
-  color: var(--cds-text-primary);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table {
+	margin: 2rem 1rem 2rem 1rem;
+	color: var(--cds-text-primary);
 }
 /* Redefine standard html elements based on bx-ordered-list styling */
-ol li, ul li {
-  color: var(--cds-text-primary,#161616);
-  display: list-item;
-  margin-bottom: 0.25rem;
-  font-size: 14px;
-  line-height: 20px;
+ol li,
+ul li {
+	color: var(--cds-text-primary, #161616);
+	display: list-item;
+	margin-bottom: 0.25rem;
+	font-size: 14px;
+	line-height: 20px;
 }
-ul, ol {
-  display: block;
-  padding-left: 1.5rem;
+ul,
+ol {
+	display: block;
+	padding-left: 1.5rem;
 }
 ol li {
-  list-style: decimal;
+	list-style: decimal;
 }
 ol ol li {
-  list-style: lower-alpha;
+	list-style: lower-alpha;
 }
 ul li {
-  list-style: "– ";
+	list-style: '– ';
 }
 ul ul li {
-  list-style: square;
+	list-style: square;
 }
 
 a.u-url {
-  text-decoration: none;
-  color: var(--cds-text-primary);
+	text-decoration: none;
+	color: var(--cds-text-primary);
 }
 /* Intro page */
 div.intro {
-    width: 100vw;
-    padding: 2rem 2rem;
+	width: 100vw;
+	padding: 2rem 2rem;
 }
 div.intro profile-pic {
-  max-width: 2rem;
-  float: left;
-  margin-right: 2rem;
+	max-width: 2rem;
+	float: left;
+	margin-right: 2rem;
 }
 div.intro h1.title {
-  margin-bottom: 0;
-  font-weight: 400;
+	margin-bottom: 0;
+	font-weight: 400;
 }
 div.intro h1.subtitle {
-  margin-top: 0;
+	margin-top: 0;
 }
-
 
 /* Tables */
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 tbody tr {
-  border-bottom: 1px solid var(--cds-ui-03,#e0e0e0);
+	border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
 }
 tr th {
-  background: var(--cds-background,#fff);
-  color: var(--cds-text-primary,#161616);
-  font-size: var(--cds-heading-01-font-size,.875rem);
-  font-weight: var(--cds-heading-01-font-weight,600);
-  letter-spacing: var(--cds-heading-01-letter-spacing,.16px);
-  line-height: var(--cds-heading-01-line-height,1.42857);
-  padding: 1rem;
-  text-align: left;
-  white-space: nowrap;
+	background: var(--cds-background, #fff);
+	color: var(--cds-text-primary, #161616);
+	font-size: var(--cds-heading-01-font-size, 0.875rem);
+	font-weight: var(--cds-heading-01-font-weight, 600);
+	letter-spacing: var(--cds-heading-01-letter-spacing, 0.16px);
+	line-height: var(--cds-heading-01-line-height, 1.42857);
+	padding: 1rem;
+	text-align: left;
+	white-space: nowrap;
 }
 tbody tr td {
-  color: var(--cds-text-primary,#161616);
-  font-size: var(--cds-body-short-01-font-size,.875rem);
-  font-weight: var(--cds-body-short-01-font-weight,400);
-  letter-spacing: var(--cds-body-short-01-letter-spacing,.16px);
-  line-height: var(--cds-body-short-01-line-height,1.28572);
-  padding: 1rem;
+	color: var(--cds-text-primary, #161616);
+	font-size: var(--cds-body-short-01-font-size, 0.875rem);
+	font-weight: var(--cds-body-short-01-font-weight, 400);
+	letter-spacing: var(--cds-body-short-01-letter-spacing, 0.16px);
+	line-height: var(--cds-body-short-01-line-height, 1.28572);
+	padding: 1rem;
 }
 
 .highlight {
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 pre {
-padding: 1rem;
-font-family: "IBM Plex Mono",system-ui,-apple-system,BlinkMacSystemFont,".SFNSText-Regular";
-font-size: .75rem;
-line-height: 1rem;
+	padding: 1rem;
+	font-family:
+		'IBM Plex Mono',
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'.SFNSText-Regular';
+	font-size: 0.75rem;
+	line-height: 1rem;
 }
 
+.header {
+	margin-top: 2rem;
+}
 
-.header {margin-top: 2rem;}
-
-@import "colors";
-@import "pagefind";
+@import 'colors';
+@import 'pagefind';

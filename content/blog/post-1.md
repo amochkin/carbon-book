@@ -1,9 +1,9 @@
 ---
-title: "Hello World"
+title: 'Hello World'
 date: 2025-08-31T08:22:00Z
 draft: false
-tags: ["intro", "sample"]
-categories: ["General"]
+tags: ['intro', 'sample']
+categories: ['General']
 ---
 
 Welcome to your new Hugo site using the Carbon theme! This is a sample blog post.
