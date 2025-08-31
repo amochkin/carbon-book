@@ -1,7 +1,7 @@
 # Hugo site configuration with sample content for the Carbon Book theme
 baseURL: /
 languageCode: en-us
-title: Carbon Hugo Theme
+title: Hugo Theme
 
 theme: carbon-book
 
@@ -17,7 +17,7 @@ params:
   #  cdstheme: "white"
   darktheme: "g90"   # or "g90"
   lighttheme: "white"
-  org: "Your org"
+  org: "Carbon Book"
   # Path to a profile image. Place an image in static/images/profile.jpg or adjust the path.
   profilePic: "/images/profile.svg"
   # Short subtitle displayed under the site title on the home page.
