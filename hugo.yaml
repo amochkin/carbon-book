@@ -14,8 +14,8 @@ module:
 
 # Sample params used by the theme's homepage (layouts/index.html)
 params:
-  search: 'true'
-  sidenav: 'true'
+  search: true
+  sidenav: true
   sidemenu: 'auto'
   favicon: '/images/favicon/favicon.ico' # optional
   faviconSvg: '/images/favicon/favicon.svg'

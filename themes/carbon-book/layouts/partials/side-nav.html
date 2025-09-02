@@ -1,4 +1,4 @@
-{{ if eq .Site.Params.sidenav "true" }}
+{{ if .Site.Params.sidenav }}
 <cds-side-nav
 	aria-label="Side navigation"
 	role="navigation"
@@ -13,15 +13,7 @@
 			<cds-side-nav-menu-item
 				href="{{ if .Params.link }}{{.Params.link }}{{ else }}{{ .Permalink }}{{ end }}"
 				tabindex="-1"
-				{{
-				if
-				eq
-				.Permalink
-				$currentPage.Permalink
-				}}active=""
-				{{
-				end
-				}}
+				{{ if eq .Permalink $currentPage.Permalink }}active="" {{ end }}
 			>
 				{{ .Title }}
 			</cds-side-nav-menu-item>
@@ -31,15 +23,7 @@
 		<cds-side-nav-menu-item
 			href="{{ .Permalink }}"
 			tabindex="-1"
-			{{
-			if
-			eq
-			.Permalink
-			$currentPage.Permalink
-			}}active=""
-			{{
-			end
-			}}
+			{{ if eq .Permalink $currentPage.Permalink }}active="" {{ end }}
 		>
 			{{ .Title }}
 		</cds-side-nav-menu-item>
