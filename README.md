@@ -1,6 +1,6 @@
 # Carbon-based documentation theme for Hugo
 
-Based on [IBM Carbon Design System](https://carbondesignsystem.com/) 
+Based on [Carbon Hugo Theme](https://github.com/IBM/carbon-hugo-theme/)
 
 Inspired by [Hugo Book Theme](https://github.com/alex-shpak/hugo-book)
 
@@ -15,3 +15,11 @@ Inspired by [Hugo Book Theme](https://github.com/alex-shpak/hugo-book)
 - [ ] Hints/Quotes
 - [ ] Tabs component
 
+## Installation
+
+```
+[module]
+[[module.imports]]
+path = "github.com/<you>/carbon-book"
+version = "v0.1.0" # optional pin
+```

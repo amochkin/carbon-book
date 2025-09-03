@@ -1,0 +1,46 @@
+{{ if .Site.Params.sidenav }}
+<cds-side-nav
+	aria-label="Side navigation"
+	role="navigation"
+	collapse-mode="responsive"
+	usage-mode=""
+	data-pagefind-ignore
+>
+	{{ if eq .Site.Params.sidemenu "auto" }} {{ $currentPage := . }} {{ range .Site.Home.Pages}} {{ if .Pages }}
+	<cds-side-nav-items role="list">
+		<cds-side-nav-menu title="{{ .Title }}" role="listitem" {{ if .InSection $currentPage }}expanded="" {{ end }}>
+			{{ range .Pages }}
+			<cds-side-nav-menu-item
+				href="{{ if .Params.link }}{{.Params.link }}{{ else }}{{ .Permalink }}{{ end }}"
+				tabindex="-1"
+				{{ if eq .Permalink $currentPage.Permalink }}active="" {{ end }}
+			>
+				{{ .Title }}
+			</cds-side-nav-menu-item>
+			{{ end }}
+		</cds-side-nav-menu>
+		{{ else }}
+		<cds-side-nav-menu-item
+			href="{{ .Permalink }}"
+			tabindex="-1"
+			{{ if eq .Permalink $currentPage.Permalink }}active="" {{ end }}
+		>
+			{{ .Title }}
+		</cds-side-nav-menu-item>
+		{{ end }} {{ end }} {{ end }}
+	</cds-side-nav-items>
+	{{ if .Site.Menus.sidelinks }}
+	<cds-side-nav-divider role="separator"></cds-side-nav-divider>
+	<cds-side-nav-items role="list">
+		{{ range sort .Site.Menus.sidelinks }} {{ if .HasChildren }}
+		<cds-side-nav-menu menu-label="{{ .Name }}" trigger-content="{{ .Name }}" role="listitem">
+			{{ range .Children }}
+			<cds-side-nav-menu-item href="{{ .URL }}" tabindex="-1" role="listitem"> {{ .Name }} </cds-side-nav-menu-item>
+			{{ end }}
+		</cds-side-nav-menu>
+		{{ else }}
+		<cds-side-nav-menu-item href="{{ .URL }}">{{ .Name }}</cds-side-nav-menu-item>
+		{{ end }} {{ end }} {{ end }}
+	</cds-side-nav-items>
+</cds-side-nav>
+{{ end }}
