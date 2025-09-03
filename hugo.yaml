@@ -16,19 +16,19 @@ module:
 params:
   search: true
   sidenav: true
-  sidemenu: 'auto'
-  favicon: '/images/favicon/favicon.ico' # optional
-  faviconSvg: '/images/favicon/favicon.svg'
-  siteicon: '/images/favicon/apple-touch-icon' # used for og:image and Apple touch icon
+  sidemenu: "auto"
+  favicon: "/images/favicon/favicon.ico" # optional
+  faviconSvg: "/images/favicon/favicon.svg"
+  siteicon: "/images/favicon/apple-touch-icon" # used for og:image and Apple touch icon
   # Force to "white" for light theme, "g100" for dark theme, or "g90" for darker theme.
   #  cdstheme: "white"
-  darktheme: 'g90' # or "g90"
-  lighttheme: 'white'
-  org: 'Carbon Book'
+  darktheme: "g90" # or "g90"
+  lighttheme: "white"
+  org: "Carbon Book"
   # Path to a profile image. Place an image in static/images/profile.jpg or adjust the path.
-  profilePic: '/images/profile.svg'
+  profilePic: "/images/profile.svg"
   # Short subtitle displayed under the site title on the home page.
-  subtitle: 'A minimal, clean Hugo theme for notes and posts'
+  subtitle: "A minimal, clean Hugo theme for notes and posts"
   # Supports Markdown. Keep it brief; it's rendered as a paragraph on the home page.
   description: >-
     Welcome to my Carbon Book. This is sample content configured via hugo.yaml.
@@ -39,15 +39,15 @@ menu:
   header:
     - identifier: docs
       name: Docs
-      url: '/docs/'
+      url: "/docs/"
       weight: 1
 
     - parent: docs
       name: Introduction
-      url: '/docs/intro/'
+      url: "/docs/intro/"
       weight: 1
 
     - parent: docs
       name: Install
-      url: '/docs/install/'
+      url: "/docs/install/"
       weight: 2

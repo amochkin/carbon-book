@@ -2,8 +2,8 @@
 
 /** @type {import('@p8ec/shared').EslintConfigOverride} */
 const override = {
-	// copyright: 'Copyright header',
-	// eslintConfig: { languageOptions: { globals: { ...globals.node} } },
+  // copyright: 'Copyright header',
+  // eslintConfig: { languageOptions: { globals: { ...globals.node} } },
 };
 
-module.exports = require('@p8ec/shared').eslintConfigRecommended(override);
+module.exports = require("@p8ec/shared").eslintConfigRecommended(override);

@@ -3,7 +3,10 @@
   <head>
     <title>{{ .Title }}</title>
     <meta charset="UTF-8" />
-    <meta name="theme-color" content='{{ .Site.Params.header | default "#354F52" }}' />
+    <meta
+      name="theme-color"
+      content="{{ .Site.Params.header | default "#354F52" }}"
+    />
     <meta name="apple-mobile-web-app-title" content="{{ .Title }}" />
     {{ if .Site.Params.instanaKey }}
     <script>
@@ -14,24 +17,57 @@
       ineum('key', '{{ .Site.Params.instanaKey }}');
       ineum('trackSessions');
     </script>
-    <script defer crossorigin="anonymous" src="https://eum.instana.io/eum.min.js"></script>
+      <script
+        defer
+        crossorigin="anonymous"
+        src="https://eum.instana.io/eum.min.js"
+      ></script>
     {{ end }}
-    <link rel='stylesheet' href='{{ "/vendor/carbon-styles/styles.min.css" | relURL }}' />
-    <script type='module' src='{{ "/vendor/carbon/ui-shell.min.js" | relURL }}'></script>
-    <script type='module' src='{{ "/vendor/carbon/content-switcher.min.js" | relURL }}'></script>
-    <script type='module' src='{{ "/vendor/carbon/skip-to-content.min.js" | relURL }}'></script>
-    <script type='module' src='{{ "/vendor/carbon/tag.min.js" | relURL }}'></script>
-    <script type='module' src='{{ "/vendor/carbon/search.min.js" | relURL }}'></script>
+    <link
+      rel="stylesheet"
+      href="{{ "/vendor/carbon-styles/styles.min.css" | relURL }}"
+    />
+    <script
+      type="module"
+      src="{{ "/vendor/carbon/ui-shell.min.js" | relURL }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ "/vendor/carbon/content-switcher.min.js" | relURL }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ "/vendor/carbon/skip-to-content.min.js" | relURL }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ "/vendor/carbon/tag.min.js" | relURL }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ "/vendor/carbon/search.min.js" | relURL }}"
+    ></script>
     {{ if .Site.Params.favicon }}
-    <link rel="icon" href="{{ .Site.Params.favicon | absURL }}" />
-    <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}" />
+      <link rel="icon" href="{{ .Site.Params.favicon | absURL }}" />
+      <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}" />
     {{ end }}
     {{ if .Site.Params.faviconSvg }}
-    <link rel="icon" type="image/svg+xml" href="{{ .Site.Params.faviconSvg | absURL }}" />
+      <link
+        rel="icon"
+        type="image/svg+xml"
+        href="{{ .Site.Params.faviconSvg | absURL }}"
+      />
     {{ end }}
     {{ if .Site.Params.siteicon }}
-    <meta name="twitter:image" property="og:image" content="{{ .Site.Params.siteicon | absURL }}" />
-    <link rel="apple-touch-icon" href="{{ .Site.Params.siteicon | absURL }}" />
+      <meta
+        name="twitter:image"
+        property="og:image"
+        content="{{ .Site.Params.siteicon | absURL }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        href="{{ .Site.Params.siteicon | absURL }}"
+      />
     {{ end }}
     {{ partial "css" . }}
     {{ partial "js" . }}
@@ -39,18 +75,39 @@
     {{ template "_internal/opengraph.html" . }}
     <style>
       @media (min-width: 66rem) {
-        .cds-hugo-carbon--container .cds--grid { padding-left: 2rem; padding-right: 2rem; }
+        .cds-hugo-carbon--container .cds--grid {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
       }
-      h3 { margin-bottom: 1rem; }
+      h3 {
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
-  <body class='cds--{{ if isset .Site.Params "cdstheme" }}{{ .Site.Params.cdstheme }}{{ else }}g100{{ end }} {{ .Site.Params.build }}'>
+  <body
+    class="cds--{{ if isset .Site.Params "cdstheme" }}
+      {{ .Site.Params.cdstheme }}
+    {{ else }}
+      g100
+    {{ end }} {{ .Site.Params.build }}"
+  >
     {{ partial "body-open" . }}
-    <cds-skip-to-content href="#main-content" role="navigation" aria-label="Skip to main content"></cds-skip-to-content>
+    <cds-skip-to-content
+      href="#main-content"
+      role="navigation"
+      aria-label="Skip to main content"
+    ></cds-skip-to-content>
     <div class="cds--g90">
       {{ partial "header" . }}
     </div>
-    <div id="main-content" name="main-content" data-floating-menu-container="" class="cds--body cds-hugo-carbon--container" role="none">
+    <div
+      id="main-content"
+      name="main-content"
+      data-floating-menu-container=""
+      class="cds--body cds-hugo-carbon--container"
+      role="none"
+    >
       <main class="cds--content cds-hugo-carbon--ui-shell-content">
         <div class="cds--grid">
           <div class="cds--row">
@@ -64,7 +121,7 @@
       </main>
       {{ partial "side-nav.html" . }}
     </div>
-    <script src='{{ "pagefind/pagefind-ui.js" | relURL }}'></script>
+    <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
     {{ if isset .Site.Params "darktheme" }}
     <script type="text/javascript">
       function setTheme(themeName) { document.body.className = themeName; }
@@ -79,11 +136,16 @@
     </script>
     {{ end }}
     {{ if .Site.Params.search }}
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        new PagefindUI({ element: '#search', showSubResults: true, resetStyles: false, showImages: false });
-      });
-    </script>
+      <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          new PagefindUI({
+            element: "#search",
+            showSubResults: true,
+            resetStyles: false,
+            showImages: false,
+          });
+        });
+      </script>
     {{ end }}
   </body>
 </html>

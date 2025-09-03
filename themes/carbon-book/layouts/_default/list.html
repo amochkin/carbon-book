@@ -1,9 +1,9 @@
 {{ define "main" }}
-<section class="list">
-	<h2>{{ .Title }}</h2>
-	<ul>
-		{{ range (.Paginator 5).Pages }} {{ partial "list-item" . }} {{ end }}
-	</ul>
-	{{ partial "paginator" . }}
-</section>
+  <section class="list">
+    <h2>{{ .Title }}</h2>
+    <ul>
+      {{ range (.Paginator 5).Pages }}{{ partial "list-item" . }}{{ end }}
+    </ul>
+    {{ partial "paginator" . }}
+  </section>
 {{ end }}

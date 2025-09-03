@@ -1,5 +1,11 @@
-<link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/canary/plex.css"/>
-<link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/canary/grid.css"/>
+<link
+  rel="stylesheet"
+  href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/canary/plex.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/canary/grid.css"
+/>
 
 <style>
 	/*    :root {
@@ -31,22 +37,31 @@
 
 <!-- main -->
 {{ with resources.Get "scss/main.scss" }}
-	{{ $opts := dict
-		"enableSourceMap" hugo.IsDevelopment
-		"outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-	}}
-	{{ with . | toCSS $opts }}
-		{{ if hugo.IsDevelopment }}
-			<link rel="stylesheet" href="{{ .RelPermalink }}">
-		{{ else }}
-			{{ with . | fingerprint }}
-				<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-			{{ end }}
-		{{ end }}
-	{{ end }}
+  {{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+  }}
+  {{ with . | toCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
+    {{ else }}
+      {{ with . | fingerprint }}
+        <link
+          rel="stylesheet"
+          href="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous"
+        />
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 
-{{if .Site.Params.customCss }}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.customCss | absURL }}?i=000" media="all">
-{{end}}
-
+{{ if .Site.Params.customCss }}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ .Site.Params.customCss | absURL }}?i=000"
+    media="all"
+  />
+{{ end }}

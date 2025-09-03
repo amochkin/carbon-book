@@ -1,23 +1,25 @@
 {{ define "main" }}
-<div class="intro">
-	<div class="content">
-		<p class="profile-pic">
-			{{ with .Site.Params.ProfilePic }} {{/* If profilePic is an SVG, embed it; otherwise render as an image */}} {{ $pic := . }}
-			{{ if (strings.HasSuffix (lower $pic) ".svg") }}
-				{{/* Try reading from the /static folder when a leading slash is given */}}
-				{{ $path := (cond (strings.HasPrefix $pic "/") (printf "static%s" $pic) $pic) }}
-				{{ $svg := readFile $path }}
-				{{ $svg | safeHTML }}
-			{{ else }}
-				<img class="profile" src="{{ $pic }}" />
-			{{ end }}
-			{{ end }}
-		</p>
+  <div class="intro">
+    <div class="content">
+      <p class="profile-pic">
+        {{ with .Site.Params.ProfilePic }}
+          {{/* If profilePic is an SVG, embed it; otherwise render as an image */}}
+          {{ $pic := . }}
+          {{ if (strings.HasSuffix (lower $pic) ".svg") }}
+            {{/* Try reading from the /static folder when a leading slash is given */}}
+            {{ $path := (cond (strings.HasPrefix $pic "/") (printf "static%s" $pic) $pic) }}
+            {{ $svg := readFile $path }}
+            {{ $svg | safeHTML }}
+          {{ else }}
+            <img class="profile" src="{{ $pic }}" />
+          {{ end }}
+        {{ end }}
+      </p>
 
-		<h1 class="title">{{ .Site.Title }}</h1>
-		<h1 class="subtitle">{{ .Site.Params.Subtitle }}</h1>
+      <h1 class="title">{{ .Site.Title }}</h1>
+      <h1 class="subtitle">{{ .Site.Params.Subtitle }}</h1>
 
-		<p>{{ markdownify .Site.Params.Description }}</p>
-	</div>
-</div>
+      <p>{{ markdownify .Site.Params.Description }}</p>
+    </div>
+  </div>
 {{ end }}

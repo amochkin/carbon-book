@@ -1,5 +1,5 @@
 ---
-title: 'Configuration'
+title: "Configuration"
 date: 2025-08-31T10:10:00Z
 draft: false
 ---

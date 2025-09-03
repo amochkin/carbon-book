@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart'
+title: "Quickstart"
 date: 2025-08-31T10:00:00Z
 draft: false
 ---
